@@ -3,6 +3,7 @@ from flask_cors import CORS
 from extensions import db
 from environment import DB_USERNAME, DB_PASSWORD, DB_NAME
 from controllers.authentication import authentication
+from controllers.boulders import bouldering
 
 
 app = Flask(__name__)
@@ -16,6 +17,7 @@ app.config["SQLALCHEMY_ECHO"] = True
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 app.register_blueprint(authentication)
+app.register_blueprint(bouldering)
 
 db.init_app(app)
 

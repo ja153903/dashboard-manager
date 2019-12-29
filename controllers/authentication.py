@@ -5,7 +5,7 @@ from models.authentication import Authentication
 authentication = Blueprint("authentication", __name__)
 
 
-@authentication.route("/login", methods=["POST"])
+@authentication.route("/api/login", methods=["POST"])
 def authorize_login():
     try:
         data = request.get_json()
